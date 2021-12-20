@@ -1,0 +1,29 @@
+source $(brew --prefix)/share/antigen/antigen.zsh
+export SSH_AUTH_SOCK=~/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
+export EDITOR=nano
+
+SPACESHIP_PROMPT_ADD_NEWLINE=false
+SPACESHIP_CHAR_SYMBOL="> "
+SPACESHIP_CHAR_SYMBOL_ROOT="$ "
+SPACESHIP_DIR_TRUNC=0
+SPACESHIP_EXIT_CODE_SHOW=true
+SPACESHIP_EXIT_CODE_SYMBOL=""
+SPACESHIP_PROMPT_ORDER=( user dir host git exec_time line_sep exit_code char )
+DISABLE_UPDATE_PROMPT=true
+UPDATE_ZSH_DAYS=1
+DISABLE_MAGIC_FUNCTIONS=true
+
+antigen use oh-my-zsh
+antigen bundle git
+antigen bundle gitignore
+antigen bundle command-not-found
+antigen bundle docker
+antigen bundle git-auto-fetch
+antigen bundle z
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle francoisdtm/zsh-tmp@main
+antigen bundle francoisdtm/zsh-git@main
+antigen theme spaceship-prompt/spaceship-prompt
+antigen apply
