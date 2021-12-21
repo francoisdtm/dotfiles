@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Enable firewall
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
+
+# Enable logging
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setloggingmode on
+
+# Enable stealth mode
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
