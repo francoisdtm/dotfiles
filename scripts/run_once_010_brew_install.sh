@@ -11,3 +11,7 @@ brew analytics off
 # Update and Upgrade
 brew update
 brew upgrade
+
+# Tap repositories
+brew tap homebrew/cask
+brew tap homebrew/cask-fonts
