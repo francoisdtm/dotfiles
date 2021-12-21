@@ -17,3 +17,9 @@ sudo dscl . create /Users/$ADMIN_USERNAME IsHidden 1
 
 # Disable Filevault for new account
 sudo fdesetup remove -user $ADMIN_USERNAME
+
+# Drop current's user privileges
+CURRENT_USER=`id -un`
+CURRENT_USER_ID=`dscl . -read /Users/$CURRENT_USER GeneratedUID`
+sudo dscl . -delete /Groups/admin GroupMembership $CURRENT_USER
+sudo dscl . -delete /Groups/admin GroupMembers $CURRENT_USER_ID
