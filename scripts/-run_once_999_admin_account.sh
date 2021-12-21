@@ -1,0 +1,19 @@
+#!/bin/bash
+
+ADMIN_USERNAME="admin"
+ADMIN_FULL_NAME="Administrator"
+
+# Create admin account
+sudo dscl . -create /Users/$ADMIN_USERNAME
+sudo dscl . -create /Users/$ADMIN_USERNAME UserShell /bin/bash
+sudo dscl . -create /Users/$ADMIN_USERNAME RealName $ADMIN_FULL_NAME
+sudo dscl . -create /Users/$ADMIN_USERNAME UniqueID 1001
+sudo dscl . -create /Users/$ADMIN_USERNAME PrimaryGroupID 1000
+sudo dscl . -passwd /Users/$ADMIN_USERNAME password
+sudo dscl . -append /Groups/admin GroupMembership username
+
+# Hide user from login view
+sudo dscl . create /Users/$ADMIN_USERNAME IsHidden 1
+
+# Disable Filevault for new account
+sudo fdesetup remove -user $ADMIN_USERNAME
