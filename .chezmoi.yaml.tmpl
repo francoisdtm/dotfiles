@@ -1,9 +1,20 @@
-{{- $computer_name = promptString "Computer Name" $computer_name -}}
-{{- $hostname = promptString "Hostname" $hostname -}}
-{{- $name = promptString "Full Name" $name -}}
-{{- $email = promptString "Email" $email -}}
-{{- $github_user = promptString "GitHub Username" $github_user -}}
-{{- $gpg_recipient = promptString "GPG Recipient" $gpg_recipient -}}
+{{- $name := "François Dautrême" -}}
+{{- $email := "f.dautreme@icloud.com" -}}
+{{- $github_user := "francoisdtm" -}}
+{{- $computer_name := "francois-mbp" -}}
+{{- $hostname := $computer_name -}}
+{{- $pass_repo := "https://github.com/$github_user/secrets" -}}
+{{- $gpg_recipient := "7A6FE00E074F2B913EBD33B5F05DC9084102F48A" -}}
+
+{{- if (env "ASK") }}
+{{-   $computer_name = promptString "Computer Name" $computer_name -}}
+{{-   $hostname = promptString "Hostname" $hostname -}}
+{{-   $name = promptString "Full Name" $name -}}
+{{-   $email = promptString "Email" $email -}}
+{{-   $github_user = promptString "GitHub Username" $github_user -}}
+{{-   $pass_repo := promptString "Pass repository URL" $pass_repo -}}
+{{-   $gpg_recipient = promptString "GPG Recipient" $gpg_recipient -}}
+{{- end }}
 
 data:
   name: {{ $name | quote }}
@@ -11,6 +22,7 @@ data:
   github_user: {{ $github_user | quote }}
   computer_name: {{ $computer_name | quote }}
   hostname: {{ $hostname | quote }}
+  pass_repo: {{ $pass_repo | quote }}
 
 encryption: gpg
 gpg:
