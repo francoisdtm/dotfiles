@@ -21,6 +21,7 @@ brew install antigen
 brew install awscli
 brew install aws-sam-cli
 brew install browserpass
+brew install chezmoi
 brew install git
 brew install go
 brew install pass
