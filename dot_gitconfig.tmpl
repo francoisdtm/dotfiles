@@ -1,0 +1,11 @@
+[user]
+	name = {{ .name }}
+	email = {{ .email }}
+[core]
+	editor = nano
+	excludesfile = ~/.gitignore
+	whitespace = trailing-space,space-before-tab
+[init]
+	defaultBranch = main
+[url "ssh://git@github.com/{{ .github_user }}"]
+  insteadOf = https://github.com/{{ .github_user }}

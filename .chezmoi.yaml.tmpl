@@ -1,0 +1,17 @@
+{{- $computer_name = promptString "Computer Name" $computer_name -}}
+{{- $hostname = promptString "Hostname" $hostname -}}
+{{- $name = promptString "Full Name" $name -}}
+{{- $email = promptString "Email" $email -}}
+{{- $github_user = promptString "GitHub Username" $github_user -}}
+{{- $gpg_recipient = promptString "GPG Recipient" $gpg_recipient -}}
+
+data:
+  name: {{ $name | quote }}
+  email: {{ $email | quote }}
+  github_user: {{ $github_user | quote }}
+  computer_name: {{ $computer_name | quote }}
+  hostname: {{ $hostname | quote }}
+
+encryption: gpg
+gpg:
+  recipient: {{ $gpg_recipient | quote }}
