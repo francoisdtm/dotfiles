@@ -10,7 +10,7 @@ sudo dscl . -create /Users/$ADMIN_USERNAME RealName $ADMIN_FULL_NAME
 sudo dscl . -create /Users/$ADMIN_USERNAME UniqueID 1001
 sudo dscl . -create /Users/$ADMIN_USERNAME PrimaryGroupID 1000
 sudo dscl . -passwd /Users/$ADMIN_USERNAME password
-sudo dscl . -append /Groups/admin GroupMembership username
+sudo dscl . -append /Groups/admin GroupMembership $ADMIN_USERNAME
 
 # Hide user from login view
 sudo dscl . create /Users/$ADMIN_USERNAME IsHidden 1
