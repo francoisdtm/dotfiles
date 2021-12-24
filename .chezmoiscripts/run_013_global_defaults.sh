@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -exo pipefail
+
 defaults write com.apple.TextEdit "RichText" -bool "false"
 defaults write com.apple.TimeMachine "DoNotOfferNewDisksForBackup" -bool "true"
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true

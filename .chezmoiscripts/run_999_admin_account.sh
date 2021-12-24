@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -exo pipefail
+
 ADMIN_USERNAME="admin"
 ADMIN_FULL_NAME="Administrator"
 

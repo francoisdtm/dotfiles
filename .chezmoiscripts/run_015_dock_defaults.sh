@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -exo pipefail
+
 defaults write com.apple.dock tilesize -int 30
 defaults write com.apple.dock bigsize -int 70
 defaults write com.apple.dock minimize-to-application -bool true

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -exo pipefail
+
 # Enable firewall
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
 

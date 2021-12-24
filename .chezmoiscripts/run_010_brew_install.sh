@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -exo pipefail
+
 # Install Homebrew
 if test ! $(which brew); then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -24,6 +26,7 @@ brew install awscli
 brew install aws-sam-cli
 brew install browserpass
 brew install chezmoi
+brew install dnscrypt-proxy
 brew install git
 brew install go
 brew install pass

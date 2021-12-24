@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -exo pipefail
+
 # Enable Filevault
 sudo fdesetup enable
 

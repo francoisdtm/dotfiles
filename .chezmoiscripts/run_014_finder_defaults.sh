@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -exo pipefail
+
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 defaults write NSGlobalDomain NSToolbarTitleViewRolloverDelay -float 0
