@@ -13,8 +13,10 @@ brew update
 brew upgrade
 
 # Tap repositories
+brew tap aws/tap
 brew tap homebrew/cask
 brew tap homebrew/cask-fonts
+brew tap amar1729/formulae
 
 # Install packages
 brew install antigen
