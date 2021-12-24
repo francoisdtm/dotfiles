@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -exo pipefail
+
+sudo scutil --set HostName {{ .computer_name | quote }}
+sudo scutil --set ComputerName {{ .computer_name | quote }}
+sudo scutil --set LocalHostName {{ .computer_name | quote }}
