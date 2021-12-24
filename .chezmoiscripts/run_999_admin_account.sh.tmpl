@@ -6,16 +6,16 @@ ADMIN_USERNAME={{ .admin_login | quote }}
 ADMIN_FULL_NAME={{ .admin_name | quote }}
 
 # Create admin account
-sudo dscl . -create /Users/$ADMIN_USERNAME
-sudo dscl . -create /Users/$ADMIN_USERNAME UserShell /bin/bash
-sudo dscl . -create /Users/$ADMIN_USERNAME RealName $ADMIN_FULL_NAME
-sudo dscl . -create /Users/$ADMIN_USERNAME UniqueID 1001
-sudo dscl . -create /Users/$ADMIN_USERNAME PrimaryGroupID 1000
-sudo dscl . -passwd /Users/$ADMIN_USERNAME password
-sudo dscl . -append /Groups/admin GroupMembership $ADMIN_USERNAME
-
-# Hide user from login view
-sudo dscl . -create /Users/$ADMIN_USERNAME IsHidden 1
+if ! id "$ADMIN_USERNAME" &>/dev/null;
+then
+    sudo dscl . -create /Users/$ADMIN_USERNAME
+    sudo dscl . -create /Users/$ADMIN_USERNAME UserShell /bin/bash
+    sudo dscl . -create /Users/$ADMIN_USERNAME RealName $ADMIN_FULL_NAME
+    sudo dscl . -create /Users/$ADMIN_USERNAME UniqueID 1001
+    sudo dscl . -create /Users/$ADMIN_USERNAME PrimaryGroupID 1000
+    sudo dscl . -create /Users/$ADMIN_USERNAME IsHidden 1
+    sudo dscl . -passwd /Users/$ADMIN_USERNAME password
+fi
 
 # Drop current's user privileges
 CURRENT_USER=`id -un`
