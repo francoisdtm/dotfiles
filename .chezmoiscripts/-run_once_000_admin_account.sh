@@ -17,6 +17,5 @@ sudo dscl . -create /Users/$ADMIN_USERNAME IsHidden 1
 
 # Drop current's user privileges
 CURRENT_USER=`id -un`
-CURRENT_USER_ID=`dscl . -read /Users/$CURRENT_USER GeneratedUID`
 sudo dscl . -delete /Groups/admin GroupMembership $CURRENT_USER
-sudo dscl . -delete /Groups/admin GroupMembers $CURRENT_USER_ID
+sudo dseditgroup -o edit -d $CURRENT_USER -t user admin
