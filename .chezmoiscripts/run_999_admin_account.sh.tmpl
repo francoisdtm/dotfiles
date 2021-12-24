@@ -2,8 +2,8 @@
 
 set -exo pipefail
 
-ADMIN_USERNAME="admin"
-ADMIN_FULL_NAME="Administrator"
+ADMIN_USERNAME={{ .admin_login | quote }}
+ADMIN_FULL_NAME={{ .admin_name | quote }}
 
 # Create admin account
 sudo dscl . -create /Users/$ADMIN_USERNAME
