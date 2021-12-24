@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -exo pipefail
+
+if [ -d "/path/to/dir" ];
+then
+    pass init {{ .gpg_recipient | quote }}
+    pass git init
+    pass git remote add origin {{ .pass_repo | quote }}
+fi
+
+pass git pull

@@ -3,7 +3,7 @@
 {{- $github_user := "francoisdtm" -}}
 {{- $computer_name := "francois-mbp" -}}
 {{- $hostname := $computer_name -}}
-{{- $pass_repo := "https://github.com/$github_user/secrets" -}}
+{{- $pass_repo := "https://github.com/francoisdtm/secrets" -}}
 {{- $gpg_recipient := "B60985344DD9D6C954F2CE3B6311DC6B15A97A59" -}}
 
 {{- if (env "ASK") }}
@@ -23,6 +23,7 @@ data:
   computer_name: {{ $computer_name | quote }}
   hostname: {{ $hostname | quote }}
   pass_repo: {{ $pass_repo | quote }}
+  gpg_recipient: {{ $gpg_recipient | quote }}
 
 encryption: gpg
 gpg:
