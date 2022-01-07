@@ -1,36 +1,20 @@
 {{- $name := "François Dautrême" -}}
 {{- $email := "4825058+francoisdtm@users.noreply.github.com" -}}
 {{- $github_user := "francoisdtm" -}}
-{{- $computer_name := "francois-mbp" -}}
-{{- $hostname := $computer_name -}}
-{{- $pass_repo := "https://github.com/francoisdtm/secrets" -}}
 {{- $gpg_recipient := "B60985344DD9D6C954F2CE3B6311DC6B15A97A59" -}}
 
-{{- $admin_login := "admin" -}}
-{{- $admin_name := "Administrator" -}}
-
 {{- if (env "ASK") }}
-{{-   $computer_name = promptString "Computer Name" $computer_name -}}
-{{-   $hostname = promptString "Hostname" $hostname -}}
 {{-   $name = promptString "Full Name" $name -}}
 {{-   $email = promptString "Email" $email -}}
 {{-   $github_user = promptString "GitHub Username" $github_user -}}
-{{-   $pass_repo := promptString "Pass repository URL" $pass_repo -}}
 {{-   $gpg_recipient = promptString "GPG Recipient" $gpg_recipient -}}
-{{-   $admin_login := promptString "Admin account login" $admin_login -}}
-{{-   $admin_name = promptString "Admin account fullname" $admin_name -}}
 {{- end }}
 
 data:
   name: {{ $name | quote }}
   email: {{ $email | quote }}
   github_user: {{ $github_user | quote }}
-  computer_name: {{ $computer_name | quote }}
-  hostname: {{ $hostname | quote }}
-  pass_repo: {{ $pass_repo | quote }}
   gpg_recipient: {{ $gpg_recipient | quote }}
-  admin_login: {{ $admin_login | quote }}
-  admin_name: {{ $admin_name | quote }}
 
 encryption: gpg
 gpg:
