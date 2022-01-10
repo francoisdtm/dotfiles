@@ -1,6 +1,9 @@
 [user]
 	name = {{ .name }}
 	email = {{ .email }}
+	signingkey = {{ .gpg_recipient }} 
+[commit]
+	gpgsign = true
 [core]
 	editor = nano
 	excludesfile = ~/.gitignore
