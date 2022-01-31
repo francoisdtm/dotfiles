@@ -1,6 +1,6 @@
 export PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH"
 export SSH_AUTH_SOCK=~/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
-export EDITOR=nano
+export EDITOR='code -w'
 export GPG_TTY=$(tty)
 
 # Homebrew security
