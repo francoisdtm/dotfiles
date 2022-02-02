@@ -7,9 +7,6 @@ export GPG_TTY=$(tty)
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 export HOMEBREW_CASK_OPTS=--require-sha
 
-# xQuartz
-xhost +127.0.0.1 > /dev/null
-
 # Spaceship config
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_CHAR_SYMBOL="> "
