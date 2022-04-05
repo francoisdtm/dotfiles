@@ -35,5 +35,6 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle francoisdtm/zsh-tmp@main
 antigen bundle francoisdtm/zsh-git@main
+antigen bundle unixorn/fzf-zsh-plugin@main
 antigen theme spaceship-prompt/spaceship-prompt
 antigen apply
