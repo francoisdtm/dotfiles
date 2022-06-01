@@ -5,6 +5,8 @@ export SSH_AUTH_SOCK=~/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/D
 export EDITOR='code -w'
 export GPG_TTY=$(tty)
 
+# Test
+
 # Spaceship config
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_CHAR_SYMBOL="> "
